@@ -8,3 +8,5 @@ const playerFactory = (sign) => {
 
 const player = playerFactory('x')
 const computer = playerFactory('o')
+
+let gameBoard = ['','','','','','','','','']
