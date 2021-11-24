@@ -1,13 +1,24 @@
-let gameBoard = ['','','','','','','','','']
+let gameBoard = (function() {
+	let _board = [...Array(9)].map(x => x = '');
+  
+  function method() {
+  	console.log(_board)
+  }
+  
+  return {
+  	method: method
+  }
+  	
+})();
+
+gameBoard.method()
 
 const createPlayers = (name, symbol) => { // Function Factory
-    return { name, symbol };
+    const sample = () => { console.log("Hello")} // Auto goes to prototype
+    return { name, symbol, sample };
 }
 
 const user = createPlayers('Player One', 'x');
 const computer = createPlayers('Computer', 'o');
 
-console.log(user.name);
-console.log(user.symbol);
-console.log(computer.name);
-console.log(computer.symbol);
+console.log(user.sample())
