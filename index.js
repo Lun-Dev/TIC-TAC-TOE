@@ -1,13 +1,13 @@
 let gameBoard = (function() {
     const getContainer = document.querySelector(".grid-container")
-    let _board = [...Array(9)].map(x => x = '?');
+    let _board = [...Array(9)].map(x => x = '$');
+    let _draw = ''
   
     function method() {
-        let draw = ''
         for (const thing in _board) {
-            draw += `<div class="cell">${_board[thing]}</div>`
+            _draw += `<div class="cell">${_board[thing]}</div>`
         }
-        getContainer.innerHTML = draw
+        getContainer.innerHTML = _draw
   }
   
   return {
