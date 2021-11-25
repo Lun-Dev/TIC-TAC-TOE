@@ -1,13 +1,13 @@
-let gameBoard = (function() { // Module
-    const getContainer = document.querySelector(".grid-container")
-    let _board = [...Array(9)].map(x => x = '$');
-    let _draw = ''
-  
-    function method() {
-        for (const thing in _board) {
-            _draw += `<div class="cell">${_board[thing]}</div>`
-        }
-        getContainer.innerHTML = _draw
+const gameBoard = (function() { // Module
+  const getContainer = document.querySelector(".grid-container")
+  let _board = [...Array(9)].map(x => x = '');
+  let _draw = ''
+
+  function method() {
+      for (const thing in _board) {
+          _draw += `<div class="cell">${_board[thing]}</div>`
+      }
+      getContainer.innerHTML = _draw
   }
   
   return {
