@@ -1,5 +1,6 @@
 const gameBoard = (function() { // Module
   const getContainer = document.querySelector(".grid-container")
+  
   let _board = [...Array(9)].map(x => x = '');
   let _draw = ''
 
