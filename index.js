@@ -1,7 +1,7 @@
-// (function() {
+(function() {
     const _getContainer = document.querySelector(".grid-container");
     const _board = [];
-    let nextMove = "X";
+    let nextMove = "X"
 
     function gameOver() {
     console.log("hi")
@@ -15,11 +15,12 @@
     console.log("hi")
     }
 
-    const squareBox = (element, index) => {
+
+const squareBox = (element, index) => {
         return {
             element,
             index,
-            state: '',
+            state: "",
             clicked() {
                 state = nextMove;
                 element.classList.remove("notClicked");
@@ -27,7 +28,7 @@
                     return false;
                 };
                 element.querySelector('p').innerHTML = state;
-                nextMove == "X" ? (nextMove == "O") : (nextMove == "X")
+                nextMove == "X" ? (nextMove = "O") : (nextMove = "X")
             }
         }
     }
@@ -41,7 +42,7 @@
         _getContainer.appendChild(div);
         _board.push(square);
     }
-// })();
+})();
 
 console.log(_board)
 
