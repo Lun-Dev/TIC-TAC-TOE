@@ -1,19 +1,49 @@
-const getContainer = document.querySelector(".grid-container");
-const _board = [];
-let nextMove = 'X';
+// (function() {
+    const _getContainer = document.querySelector(".grid-container");
+    const _board = [];
+    let nextMove = "X";
 
-function gameOver() {
-console.log("hi")
-}
+    function gameOver() {
+    console.log("hi")
+    }
 
-function gameTie() {
-console.log("hi")
-}
+    function gameTie() {
+    console.log("hi")
+    }
 
-function gameWon() {
-console.log("hi")
-}
+    function gameWon() {
+    console.log("hi")
+    }
 
+    const squareBox = (element, index) => {
+        return {
+            element,
+            index,
+            state: '',
+            clicked() {
+                state = nextMove;
+                element.classList.remove("notClicked");
+                element.onclick = () => {
+                    return false;
+                };
+                element.querySelector('p').innerHTML = state;
+                nextMove == "X" ? (nextMove == "O") : (nextMove == "X")
+            }
+        }
+    }
+
+    for (let i = 0; i < 9; i++) {
+        const div = document.createElement('div');
+        div.classList.add("square", "notClicked");
+        const square = squareBox(div, i);
+        div.onclick = () => { square.clicked() };
+        div.appendChild(document.createElement("p"))
+        _getContainer.appendChild(div);
+        _board.push(square);
+    }
+// })();
+
+console.log(_board)
 
 // const gameBoard = (function() { // Module
 //   const getContainer = document.querySelector(".grid-container")
