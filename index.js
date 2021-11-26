@@ -4,7 +4,7 @@
     let nextMove = "X"
 
     function gameOver() {
-    console.log("hi")
+        _getContainer.style.display = "none"
     }
 
     function gameTie() {
@@ -28,6 +28,8 @@ const squareBox = (element, index) => {
                     return false; // Make the square unclickable
                 };
                 element.querySelector('p').innerHTML = state; // fill the P with state (Either X or O)
+                if (gameWon()) return gameOver(`The Winner Is Player ${state}`)
+                if (gameTie()) return gameOver(`Draw`)
                 nextMove == "X" ? (nextMove = "O") : (nextMove = "X") // if nextMove = X, change it to O; otherwise, change it to X
             }
         }
