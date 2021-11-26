@@ -22,13 +22,13 @@ const squareBox = (element, index) => {
             index,
             state: "",
             clicked() {
-                state = nextMove;
-                element.classList.remove("notClicked");
+                state = nextMove; // state was blink, now it equals value in nextMove (Either X or O) 
+                element.classList.remove("notClicked"); // Remove notClicked from div, since it is clicked
                 element.onclick = () => {
-                    return false;
+                    return false; // Make the square unclickable
                 };
-                element.querySelector('p').innerHTML = state;
-                nextMove == "X" ? (nextMove = "O") : (nextMove = "X")
+                element.querySelector('p').innerHTML = state; // fill the P with state (Either X or O)
+                nextMove == "X" ? (nextMove = "O") : (nextMove = "X") // if nextMove = X, change it to O; otherwise, change it to X
             }
         }
     }
