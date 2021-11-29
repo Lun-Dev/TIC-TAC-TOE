@@ -9,7 +9,7 @@
 
     function gameTie() {
         let notTie = true;
-        _board.forEach(({state}) => {
+        _board.forEach(({state}) => { // check if each item in _board are filled
             if (state == "") { 
                 notTie = false
             };
