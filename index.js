@@ -70,7 +70,6 @@ for (let i = 0; i < 9; i++) {
     div.appendChild(document.createElement("p"))
     _getContainer.appendChild(div);
     _board.push(square);
-    console.log(_board)
 }
 
 })();
